@@ -14,8 +14,8 @@ app.get('/', (req, res) => {
 app.post('/utente', (req, res) => {
     // console.log(req.body);
     const { datiUtente } = req.body;
-     if (!nome) { res.status(400).json({
-         message: "Mancato inserimento del nome" 
+     if (!datiUtente) { res.status(400).json({
+         message: "Mancato inserimento di alcuni dati" 
         });
      } 
       res.json(datiUtente); 
