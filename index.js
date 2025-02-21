@@ -7,19 +7,18 @@ app.use(cors()); app.use(bodyParser.json());
 app.use(express.urlencoded({ extended: true }));
 
 app.get('/', (req, res) => {
-    res.send('Hello World');
+    res.send('Hello World, this is the backend!');
 });
-app.get('/utente', (req, res) => {
-    res.send('Ciao utente')
-})
+
+
 app.post('/utente', (req, res) => {
     // console.log(req.body);
-    const { nome } = req.body;
+    const { datiUtente } = req.body;
      if (!nome) { res.status(400).json({
          message: "Mancato inserimento del nome" 
         });
-     } // else res.send(Ciao ${nome});
-      res.json({ message: `Ciao ${nome}` }); 
+     } 
+      res.json(datiUtente); 
     }) 
 
 module.exports = app;
