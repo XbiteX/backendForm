@@ -3,7 +3,6 @@ const cors = require('cors');
 const bodyParser = require('body-parser');
 const app = express();
 
-const PORT = 3080;
 app.use(cors()); app.use(bodyParser.json());
 app.use(express.urlencoded({ extended: true }));
 
@@ -22,4 +21,5 @@ app.post('/utente', (req, res) => {
      } // else res.send(Ciao ${nome});
       res.json({ message: `Ciao ${nome}` }); 
     }) 
-    app.listen(PORT, () => { console.log("Server is running")});
+
+module.exports = app;
